@@ -10,6 +10,7 @@ if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.12'))
 
   class Chef::Resource::GemPackage
     def gem_binary(*args)
+      node ||= {}
       node[:gem_binary] || 'gem'
     end
   end
@@ -26,6 +27,7 @@ if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.12'))
     end
 
     def gem_binary(*args)
+      node ||= {}
       node[:chef_gem_binary] || ::File.join(Gem.bindir, 'gem')
     end
 
