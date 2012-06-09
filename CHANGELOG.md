@@ -1,3 +1,7 @@
+v0.0.3
+------
+* Default node in overrides if it is unavailable
+
 v0.0.2
 ------
 * Add omnibus fixes for installs < 0.10.12
