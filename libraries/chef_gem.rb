@@ -32,6 +32,7 @@ if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.12'))
     end
 
     def after_created
+      Gem.clear_paths # NOTE: Related to CHEF-3164
       Array(@action).flatten.compact.each do |action|
         self.run_action(action)
       end
