@@ -1,3 +1,7 @@
+v0.0.4
+------
+* Backports CHEF-3164 (thanks [cgriego](https://github.com/cgriego))
+
 v0.0.3
 ------
 * Default node in overrides if it is unavailable
