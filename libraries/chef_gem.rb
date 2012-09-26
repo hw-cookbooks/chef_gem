@@ -1,6 +1,8 @@
-if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.12'))
+current_version = Gem::Version.new(Chef::VERSION)
 
-  if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.9'))
+if(current_version < Gem::Version.new('10.12.0'))
+
+  if(current_version < Gem::Version.new('0.10.9'))
     Chef::Log.info '*** Adding ChefGem Resource ***'
   else
     Chef::Log.info '*** Adding fixes to ChefGem Resource ***'
@@ -32,7 +34,6 @@ if(Gem::Version.new(Chef::VERSION) < Gem::Version.new('0.10.12'))
     end
 
     def after_created
-      Gem.clear_paths # NOTE: Related to CHEF-3164
       Array(@action).flatten.compact.each do |action|
         self.run_action(action)
       end
@@ -58,4 +59,14 @@ if(Chef::VERSION.to_s.start_with?('0.10.10'))
       end
     end
   end
+end
+
+if(current_version < Gem::Version.new(10.14.0))
+  module Chef3164
+    def after_created(*)
+      Gem.clear_paths # NOTE: Related to CHEF-3164
+      super
+    end
+  end
+  Chef::Resource::ChefGem.send(:include, Chef3164)
 end
