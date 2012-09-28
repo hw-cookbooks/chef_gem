@@ -1,3 +1,7 @@
+v0.0.5
+------
+* Applies backport of CHEF-3164 to _all_ versions under 10.14.0 (thanks [cgriego](https://github.com/cgriego))
+
 v0.0.4
 ------
 * Backports CHEF-3164 (thanks [cgriego](https://github.com/cgriego))
