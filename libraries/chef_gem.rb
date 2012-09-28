@@ -61,7 +61,7 @@ if(Chef::VERSION.to_s.start_with?('0.10.10'))
   end
 end
 
-if(current_version < Gem::Version.new(10.14.0))
+if(current_version < Gem::Version.new('10.14.0'))
   module Chef3164
     def after_created(*)
       Gem.clear_paths # NOTE: Related to CHEF-3164
