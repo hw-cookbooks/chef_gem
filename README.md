@@ -17,11 +17,6 @@ chef_gem to work as expected. For Chef installations of 0.10.12 and beyond, this
 cookbook provides nothing. This means you will get consistent and expected behavior
 across Chef versions.
 
-Repository
-----------
-
-https://github.com/heavywater/chef-chef_gem
-
 Configuration
 -------------
 
@@ -35,3 +30,9 @@ Notes
 
 With the release of 0.10.12 this cookbook should be considered deprecated and used
 only for compatibility with older installations.
+
+Repository
+----------
+
+* https://github.com/hw-cookbooks/chef_gem
+* IRC: Freenode @ #heavywater

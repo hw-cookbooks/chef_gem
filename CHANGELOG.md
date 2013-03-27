@@ -1,3 +1,7 @@
+v0.1.0
+------
+* Add name to metadata.rb (thanks [Eli Klein](https://github.com/eklein))
+
 v0.0.5
 ------
 * Applies backport of CHEF-3164 to _all_ versions under 10.14.0 (thanks [cgriego](https://github.com/cgriego))
